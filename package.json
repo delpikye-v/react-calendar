@@ -1,7 +1,7 @@
 {
   "name": "react-calendar-z",
-  "version": "1.0.0",
-  "description": "React hook calendar (lib, light)",
+  "version": "2.0.0",
+  "description": "React hook calendar (lib)",
   "main": "build/index.js",
   "module": "build/index.esm.js",
   "browser": "build/index.js",
@@ -31,6 +31,7 @@
     "calendar",
     "react-calendar",
     "basic-calendar",
+    "date-picker",
     "simple-calendar",
     "range-calendar",
     "beauty-calendar",

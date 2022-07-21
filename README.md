@@ -13,11 +13,11 @@
 
 #### Description
 
-+ Calendar view, selected, small...
++ Calendar view, selected, small.
 + Can be range date selected, read-only
-+ Support customize label (i18n)...
-+ Support to display the first day of the second week or Sunday
-+ Etc...
++ Support customize label (if need)
++ Support to display the first day: monday or sunday // (checking with another day...)
++ light, no use lib: momentjs, dayjs...
 
 ---
 
@@ -49,10 +49,12 @@ import Calendar from "react-calendar-z";
     <Calendar
       value={date}
       onSelectedValue={setDate}
+      // showToday={true}
       // showAnchor
       // i18nLabelWeek={labelWeekDays}
       // notBeforeTime={new Date()}           >=
       // notAfterTime={new Date(2022, 7, 12)} <=
+      // show  => handle show hide (when hide => reset mode to weekview)
     />
 
 ```
@@ -73,7 +75,8 @@ see <b>index.d.ts</b>
   selectedClassName?: string;
   neighborMonthClassName?: string;
   labelMonthYearClassName?: string;
-  // width?: string | number;
+  width?: string | number;
+  // height?: string | number; => if update height, please change line-height of cell
   labelNext?: string | React.ReactNode;
   labelBack?: string | React.ReactNode;
   weekStart?: "monday" | "sunday";
@@ -84,6 +87,9 @@ see <b>index.d.ts</b>
   showAnchor?: boolean;
   value?: Date;                     // selected value
   showToday?: boolean;              // default true
+  fitMonthDay?: boolean;            // remove dispaly other month
+
+  // set from name and short-name order by Sunday => Monday
   i18nLabelWeek?: IWeekLabel[];     // display customize label
   i18nLabelMonth?: string[];        // display customize label
   onSelectedValue?: (value: Date) => any;
@@ -94,6 +100,9 @@ see <b>index.d.ts</b>
     month: number,
     decadeData?: number[]
   ) => string | React.ReactNode;
+  // => year/month !== -1 => modeview week
+  // => year !== -1/month == -1 => modeview month
+  // => decadeData !== underfined => modeview year
 
   // support customize format day
   formartDayValue?: (day: number) => string | React.ReactNode;
