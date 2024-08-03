@@ -1,6 +1,6 @@
 {
   "name": "react-calendar-z",
-  "version": "2.0.0",
+  "version": "2.0.1-zxp",
   "description": "React hook calendar (lib)",
   "main": "build/index.js",
   "module": "build/index.esm.js",

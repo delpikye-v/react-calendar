@@ -23,25 +23,31 @@
 
 
 #### Preview
-![Date-Calendar](https://github.com/delpikye-v/react-calendar/blob/main/demo.png)
+![Date-Calendar](https://github.com/delpikye-v/react-calendar/blob/main/date.png)
+
+<br />
+
+![Date-Calendar](https://github.com/delpikye-v/react-calendar/blob/main/month.png)
+
+<br />
+
+![Date-Calendar](https://github.com/delpikye-v/react-calendar/blob/main/year.png)
 
 #### Usage
 
 Install the package
 
 ```js
-npm install --save react-calendar-z
+npm install react-calendar-z
 
 ```
 
 Import the module in the place you want to use:
 ```js
 import "react-calendar-z/build/styles.css";
-
 import Calendar from "react-calendar-z";
 
 ```
-
 #### Snippet
 ```js
     const [date, setDate] = useState(new Date(2022, 7, 10));
@@ -112,7 +118,6 @@ see <b>index.d.ts</b>
 
 #### Note
 
-Rewrite...and add more (checking...)
 <br />
 
 #### RUN
@@ -121,6 +126,6 @@ Rewrite...and add more (checking...)
 
 <br />
 
-### License
+#### License
 
 MIT
