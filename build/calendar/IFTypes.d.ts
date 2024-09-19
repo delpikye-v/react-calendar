@@ -1,10 +1,26 @@
 import React from 'react';
-import { IDayBaseProps } from './WeekView';
+export type TWeekStart = 'monday' | 'sunday';
 export type TModeView = 'date' | 'month' | 'year';
+export interface IBaseYear {
+    minYear?: number;
+    maxYear?: number;
+    notBeforeTime?: Date;
+    notAfterTime?: Date;
+    minimumDayCanLargeThanToday?: boolean;
+}
+export interface IDayBaseProps {
+    readOnly?: boolean;
+    neighborMonthClassName?: string;
+    showToday?: boolean;
+    todayClassName?: string;
+    selectedClassName?: string;
+    formartDayValue?: (day: number) => string | React.ReactNode;
+}
 export interface IWeekLabel {
     name: string;
     shortName: string;
     key?: number;
+    dateClassName?: string;
 }
 export interface IWeekData {
     year: number;
@@ -16,8 +32,9 @@ export interface IWeekData {
     isSelected?: boolean;
     isOverRange?: boolean;
     fitMonthDay?: boolean;
+    isBookmark?: boolean;
 }
-export interface IDatePickerProps extends IDayBaseProps {
+export interface IDatePickerProps extends IDayBaseProps, IBaseYear {
     className?: string;
     labelMonthYearClassName?: string;
     weekClassName?: string;
@@ -25,17 +42,21 @@ export interface IDatePickerProps extends IDayBaseProps {
     height?: string | number;
     labelNext?: string | React.ReactNode;
     labelBack?: string | React.ReactNode;
-    weekStart?: 'monday' | 'sunday';
+    weekStart?: TWeekStart;
     fitMonthDay?: boolean;
-    notBeforeTime?: Date;
-    notAfterTime?: Date;
     show?: boolean;
     showAnchor?: boolean;
     value?: Date;
     i18nLabelWeek?: IWeekLabel[];
     i18nLabelMonth?: string[];
+    bookmarkDates?: Date[];
+    showMonthYearSelection?: boolean;
+    showNextBack?: boolean;
     onSelectedValue?: (value: Date) => any;
     onChangeView?: (mode: TModeView) => any;
     onClickWeekLabel?: (weekLabel: IWeekLabel) => any;
     formatTittleYearMonth?: (year: number, month: number, decadeData?: number[]) => string | React.ReactNode;
+}
+export interface IObject {
+    [name: string]: any;
 }

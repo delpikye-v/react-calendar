@@ -1,7 +1,7 @@
 {
   "name": "react-calendar-z",
-  "version": "2.0.1-zxp",
-  "description": "React hook calendar (lib)",
+  "version": "2.2.0",
+  "description": "React hook calendar (lib). Ultimate calendar",
   "main": "build/index.js",
   "module": "build/index.esm.js",
   "browser": "build/index.js",
@@ -17,8 +17,7 @@
     "cb": "npm run clean && npm run build",
     "test:watch": "jest --watch",
     "generate": "node ./util/create-component",
-    "prepublishOnly": "npm run build",
-    "deploy": "npm publish --access public"
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -35,7 +34,7 @@
     "simple-calendar",
     "range-calendar",
     "beauty-calendar",
-    "lib"
+    "react-library"
   ],
   "author": "Delpi.Kye",
   "license": "MIT",
