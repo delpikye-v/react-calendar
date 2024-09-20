@@ -121,12 +121,13 @@ formartDayValue: function(day: number) => {
 `minYear` | `maxYear`: Limited years can be displayed/selected
 `notBeforeTime` | `notAfterTime`: Selectable date limit
 
-priority `notBeforeTime` than `minYear`
-priority `notAfterTime` than `maxYear`
-
+// priority
+`notBeforeTime` takes precedence over `minYear`
+`notAfterTime` takes precedence over `maxYear`
 => we cannot select data before or after the specified data
 
-// double click title to change mode view
+//
++ double click title to change mode view
 
 ```
 
