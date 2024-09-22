@@ -1,6 +1,6 @@
 import { IBaseYear, IObject, IWeekData } from './IFTypes';
 export declare const isNil: (value: any) => boolean;
-export declare const animateLabelChange: (refs: Element) => void;
+export declare const animateLabelChange: (refs: Element, duration?: number) => void;
 export declare const getMiMaxYear: (param: IBaseYear) => IObject;
 export declare const toMatrix: (arr: any[], width: number) => any[][];
 export declare const getRealYearMonth: (year: number, month: number) => number[];

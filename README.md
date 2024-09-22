@@ -14,9 +14,9 @@
 #### Description
 
 + Calendar view, selected, small.
++ Support to display the first day of [week](https://en.wikipedia.org/wiki/Week): `monday`, `sunday`, `friday` or `saturday`
 + Can be range date selected. (limit date)
 + Support customize label (`if needed`)
-+ Support to display the first day: `monday` or `sunday`
 + Light, no use lib: momentjs, dayjs...
 + Add full all classes for all dates
 + Mode: `showMonthYearSelection`
@@ -79,28 +79,28 @@ see <b>index.d.ts</b>
 | height                      | string / number                                                     |                                                 |
 | labelNext                   | string / React.ReactNode                                            |                                                 |
 | labelBack                   | string / React.ReactNode                                            |                                                 |
-| weekStart                   | TWeekStart                                                          | 'sunday' / 'monday'                             |
-| fitMonthDay                 | boolean                                                             | false: display dates of other months            |
+| weekStart                   | enum (`sunday` / `monday` / `friday` / `saturday`)                  |  default: `sunday`                              |
+| fitMonthDay                 | boolean                                                             | `false`: display dates of other months          |
 | show                        | boolean                                                             |                                                 |
 | showAnchor                  | boolean                                                             |                                                 |
-| value                       | Date                                                                | value selected 'DATE'                           |
-| i18nLabelWeek               | IWeekLabel[]                                                        | order from 'sunday' to 'saturday'               |
+| value                       | Date                                                                | value selected `DATE`                           |
+| i18nLabelWeek               | IWeekLabel[] fill: from `sunday`, `monday`... -> `saturday`         | auto mapping with `weekStart`                   |
 | i18nLabelMonth              | string[]                                                            |                                                 |
-| bookmarkDates               | Date[]                                                              | add a class to bookmark date 'date-is-bookmark' |
-| onSelectedValue             | (value: Date) => any                                                | set selected value 'DATE'                       |
+| bookmarkDates               | Date[]                                                              | add a class to bookmark date `date-is-bookmark` |
+| onSelectedValue             | (value: Date) => any                                                | set selected value `DATE`                       |
 | onChangeView                | (mode: TModeView) => any                                            |                                                 |
 | onClickWeekLabel            | (weekLabel: IWeekLabel) => any                                      |                                                 |
-| formatTittleYearMonth       | (year: number, month: number, decadeData?: number[]) => your format |                                                 |
+| formatTittleYearMonth       | (year: number, month: number, decadeData?: number[])                | your format                                     |
 | readOnly                    | boolean                                                             |                                                 |
-| neighborMonthClassName      | string                                                              | The className of the date                       |
+| neighborMonthClassName      | string                                                              | the className of the date                       |
 | showToday                   | boolean                                                             |                                                 |
 | todayClassName              | string                                                              |                                                 |
 | selectedClassName           | string                                                              |                                                 |
 | formartDayValue             | (day: number) => string / React.ReactNode                           |                                                 |
-| minYear                     | number                                                              | default: currentYear - 100                      |
-| maxYear                     | number                                                              | default: currentYear + 100                      |
-| notBeforeTime               | Date                                                                | undefined                                       |
-| notAfterTime                | Date                                                                | undefined                                       |
+| minYear                     | number                                                              | default: `currentYear` - 100                    |
+| maxYear                     | number                                                              | default: `currentYear` + 100                    |
+| notBeforeTime               | Date                                                                | default: `undefined`                            |
+| notAfterTime                | Date                                                                | default: `undefined`                            |
 | minimumDayCanLargeThanToday | boolean                                                             | false                                           |
 | showMonthYearSelection      | boolean                                                             | false: display selection month year             |
 | showNextBack                | boolean                                                             | false: display next back                        |
@@ -110,24 +110,31 @@ see <b>index.d.ts</b>
 #### Note
 
 ```js
+// describe
 formatTittleYearMonth: function(year: number, month: number, decadeData?: number[]) => {
   // you can set display title calendar
 }
 
+// describe
 formartDayValue: function(day: number) => {
   // you can set format date
 }
 
+// describe
 `minYear` | `maxYear`: Limited years can be displayed/selected
 `notBeforeTime` | `notAfterTime`: Selectable date limit
 
-// priority
+// describe
 `notBeforeTime` takes precedence over `minYear`
 `notAfterTime` takes precedence over `maxYear`
 => we cannot select data before or after the specified data
 
-//
-+ double click title to change mode view
+// describe
+double click title to change mode view
+
+// weekStart
+`monday`, `sunday`,
++`friday` or `saturday` > v2.3.1 (testing)
 
 ```
 

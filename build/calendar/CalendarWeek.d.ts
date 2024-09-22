@@ -1,7 +1,7 @@
 import React from 'react';
 import { IWeekLabel } from './IFTypes';
 import { ICalendarDayOfWeeksProps } from './CalendarDayOfWeek';
-export interface ICalendarWeeksProps extends ICalendarDayOfWeeksProps {
+export interface ICalendarWeekProps extends ICalendarDayOfWeeksProps {
     weekLabels: IWeekLabel[];
     weekClassName?: string;
     onClickWeekLabel?: (weekLabel: IWeekLabel) => any;
@@ -37,5 +37,5 @@ export interface ICalendarWeeksProps extends ICalendarDayOfWeeksProps {
  * @param formartDayValue a callback that will be called to format the day
  *     value
  */
-declare const CalendarWeeks: React.FC<ICalendarWeeksProps>;
-export default CalendarWeeks;
+declare const CalendarWeek: React.FC<ICalendarWeekProps>;
+export default CalendarWeek;

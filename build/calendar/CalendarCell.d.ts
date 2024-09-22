@@ -1,4 +1,4 @@
-/// <reference types="react" />
+import React from 'react';
 export interface ICalendarCellProps {
     value: number;
     className?: string;
@@ -22,5 +22,5 @@ export interface ICalendarCellProps {
  * @param {function} setSelected The function to call when the cell is selected.
  * @returns {React.ReactElement} The cell element.
  */
-declare function CalendarCell({ value, className, disabled, display, isSelected, neighbor, setSelected, }: ICalendarCellProps): JSX.Element;
+declare const CalendarCell: React.FC<ICalendarCellProps>;
 export default CalendarCell;

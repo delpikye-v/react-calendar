@@ -1,5 +1,5 @@
 import React from 'react';
-export type TWeekStart = 'monday' | 'sunday';
+export type TWeekStart = 'monday' | 'sunday' | 'saturday' | 'friday';
 export type TModeView = 'date' | 'month' | 'year';
 export interface IBaseYear {
     minYear?: number;

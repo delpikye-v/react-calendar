@@ -1,6 +1,6 @@
 {
   "name": "react-calendar-z",
-  "version": "2.3.0",
+  "version": "2.3.1",
   "description": "React hook calendar (lib). Ultimate calendar",
   "main": "build/index.js",
   "module": "build/index.esm.js",
@@ -16,7 +16,6 @@
     "build": "rollup -c",
     "cb": "npm run clean && npm run build",
     "test:watch": "jest --watch",
-    "generate": "node ./util/create-component",
     "prepublishOnly": "npm run build"
   },
   "repository": {
