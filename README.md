@@ -14,7 +14,7 @@
 #### Description
 
 + Calendar view, selected, small.
-+ Support to display the first day of [week](https://en.wikipedia.org/wiki/Week): `monday`, `sunday`, `friday` or `saturday`
++ Support to display the first day of the [week](https://en.wikipedia.org/wiki/Week): `monday`, `sunday`, `friday` or `saturday`
 + Can be range date selected. (limit date)
 + Support customize label (`if needed`)
 + Light, no use lib: momentjs, dayjs...
@@ -104,6 +104,7 @@ see <b>index.d.ts</b>
 | minimumDayCanLargeThanToday | boolean                                                             | false                                           |
 | showMonthYearSelection      | boolean                                                             | false: display selection month year             |
 | showNextBack                | boolean                                                             | false: display next back                        |
+| rightNextBack               | boolean                                                             | display position next back                      |
 
 <br />
 
@@ -133,9 +134,8 @@ formartDayValue: function(day: number) => {
 double click title to change mode view
 
 // weekStart
-`monday`, `sunday`,
-+`friday` or `saturday` > v2.3.1 (testing)
-
+`monday`, `sunday`, `friday` or `saturday` > v2.3.1 (testing)
+// https://en.wikipedia.org/wiki/Week
 ```
 
 <br />

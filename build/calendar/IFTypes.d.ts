@@ -52,10 +52,19 @@ export interface IDatePickerProps extends IDayBaseProps, IBaseYear {
     bookmarkDates?: Date[];
     showMonthYearSelection?: boolean;
     showNextBack?: boolean;
+    rightNextBack?: boolean;
     onSelectedValue?: (value: Date) => any;
     onChangeView?: (mode: TModeView) => any;
     onClickWeekLabel?: (weekLabel: IWeekLabel) => any;
     formatTittleYearMonth?: (year: number, month: number, decadeData?: number[]) => string | React.ReactNode;
+}
+export interface ICalendarNavProps {
+    children: any;
+    className?: string;
+    disabled?: boolean;
+    show?: boolean;
+    index: number;
+    handleNextBack: (valueChange: number) => any;
 }
 export interface IObject {
     [name: string]: any;

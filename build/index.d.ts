@@ -3,8 +3,9 @@ import CalendarDayOfWeeks, { ICalendarDayOfWeeksProps } from "./calendar/Calenda
 import CalendarDecade, { IDecadeViewProps } from "./calendar/CalendarDecade";
 import CalendarMonth, { ICalendarMonthProps } from "./calendar/CalendarMonth";
 import CalendarWeek, { ICalendarWeekProps } from "./calendar/CalendarWeek";
+import CalendarNav from "./calendar/CalendarNav";
 import Calendar from "./calendar/";
 export * from "./calendar/IFTypes";
 export * from "./calendar/Utils";
-export { CalendarCell, CalendarDayOfWeeks, CalendarDecade, CalendarMonth, CalendarWeek, ICalendarCellProps, ICalendarDayOfWeeksProps, ICalendarMonthProps, IDecadeViewProps, ICalendarWeekProps, };
+export { CalendarCell, CalendarDayOfWeeks, CalendarDecade, CalendarMonth, CalendarWeek, CalendarNav, ICalendarCellProps, ICalendarDayOfWeeksProps, ICalendarMonthProps, IDecadeViewProps, ICalendarWeekProps, };
 export default Calendar;
