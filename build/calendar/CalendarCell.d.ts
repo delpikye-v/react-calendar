@@ -12,15 +12,6 @@ export interface ICalendarCellProps {
  * CalendarCell
  *
  * A cell in the calendar, displaying a month or year.
- *
- * @param {number} value The value of the cell.
- * @param {string} [className] The className of the cell.
- * @param {boolean} [disabled] If the cell is disabled.
- * @param {number|string} [display] What to display in the cell.
- * @param {boolean} [isSelected] If the cell is selected.
- * @param {boolean} [neighbor] If the cell is a neighbor of the current month.
- * @param {function} setSelected The function to call when the cell is selected.
- * @returns {React.ReactElement} The cell element.
  */
 declare const CalendarCell: React.FC<ICalendarCellProps>;
 export default CalendarCell;

@@ -86,7 +86,7 @@ see <b>index.d.ts</b>
 | value                       | Date                                                                | value selected `DATE`                           |
 | i18nLabelWeek               | IWeekLabel[] fill: from `sunday`, `monday`... -> `saturday`         | auto mapping with `weekStart`                   |
 | i18nLabelMonth              | string[]                                                            |                                                 |
-| bookmarkDates               | Date[]                                                              | add a class to bookmark date `date-is-bookmark` |
+| bookmarkDates               | IBookmarkDate[]                                                     | add a class to bookmark                         |
 | onSelectedValue             | (value: Date) => any                                                | set selected value `DATE`                       |
 | onChangeView                | (mode: TModeView) => any                                            |                                                 |
 | onClickWeekLabel            | (weekLabel: IWeekLabel) => any                                      |                                                 |
@@ -105,12 +105,28 @@ see <b>index.d.ts</b>
 | showMonthYearSelection      | boolean                                                             | false: display selection month year             |
 | showNextBack                | boolean                                                             | false: display next back                        |
 | rightNextBack               | boolean                                                             | display position next back                      |
+| showFooter                  | boolean                                                             | show footer (selection date and clear status)   |
+| showXClose                  | boolean                                                             | button clear status                             |
+| xCloseIcon                  | string / React.ReactNode                                            | customize x-close                               |
+| formatSelectedDate          | (date: Date) => string / React.ReactNode                            | format in footer (default `MMM, DD yyyy`)       |
 
 <br />
 
 #### Note
 
 ```js
+IWeekLabel {
+  name: string; // custom label
+  shortName: string; // custom short name => display name || name
+  ...
+}
+
+IBookmarkDate {
+  date: date; // date bookmark
+  className: string; // class bookmark
+  ...
+}
+
 // describe
 formatTittleYearMonth: function(year: number, month: number, decadeData?: number[]) => {
   // you can set display title calendar
@@ -134,7 +150,7 @@ formartDayValue: function(day: number) => {
 double click title to change mode view
 
 // weekStart
-`monday`, `sunday`, `friday` or `saturday` > v2.3.1 (testing)
+`monday`, `sunday`, `friday` or `saturday` > v2.3.1
 // https://en.wikipedia.org/wiki/Week
 ```
 
