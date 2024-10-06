@@ -84,7 +84,7 @@ see <b>index.d.ts</b>
 | show                        | boolean                                                             |                                                 |
 | showAnchor                  | boolean                                                             |                                                 |
 | value                       | Date                                                                | value selected `DATE`                           |
-| i18nLabelWeek               | IWeekLabel[] fill: from `sunday`, `monday`... -> `saturday`         | auto mapping with `weekStart`                   |
+| i18nLabelWeek               | IWeekLabel[] / string[]: from `sunday`, `monday`... -> `saturday`   | auto mapping with `weekStart`                   |
 | i18nLabelMonth              | string[]                                                            |                                                 |
 | bookmarkDates               | IBookmarkDate[]                                                     | add a class to bookmark                         |
 | onSelectedValue             | (value: Date) => any                                                | set selected value `DATE`                       |
@@ -96,7 +96,7 @@ see <b>index.d.ts</b>
 | showToday                   | boolean                                                             |                                                 |
 | todayClassName              | string                                                              |                                                 |
 | selectedClassName           | string                                                              |                                                 |
-| formartDayValue             | (day: number) => string / React.ReactNode                           |                                                 |
+| formatDayValue              | (day: number) => string / React.ReactNode                           |                                                 |
 | minYear                     | number                                                              | default: `currentYear` - 100                    |
 | maxYear                     | number                                                              | default: `currentYear` + 100                    |
 | notBeforeTime               | Date                                                                | default: `undefined`                            |
@@ -108,13 +108,16 @@ see <b>index.d.ts</b>
 | showFooter                  | boolean                                                             | show footer (selection date and clear status)   |
 | showXClose                  | boolean                                                             | button clear status                             |
 | xCloseIcon                  | string / React.ReactNode                                            | customize x-close                               |
-| formatSelectedDate          | (date: Date) => string / React.ReactNode                            | format in footer (default `MMM, DD yyyy`)       |
+| formatSelectedDate          | (date: Date) => string / React.ReactNode                            | format in footer (default `MMM DD, yyyy`)       |
 
 <br />
 
 #### Note
 
 ```js
+xCloseIcon: When you press x to close, it will display the currently selected date again.
+
+
 IWeekLabel {
   name: string; // custom label
   shortName: string; // custom short name => display name || name
@@ -133,7 +136,7 @@ formatTittleYearMonth: function(year: number, month: number, decadeData?: number
 }
 
 // describe
-formartDayValue: function(day: number) => {
+formatDayValue: function(day: number) => {
   // you can set format date
 }
 
@@ -149,9 +152,8 @@ formartDayValue: function(day: number) => {
 // describe
 double click title to change mode view
 
-// weekStart
+// weekStart: normore: see https://en.wikipedia.org/wiki/Week
 `monday`, `sunday`, `friday` or `saturday` > v2.3.1
-// https://en.wikipedia.org/wiki/Week
 ```
 
 <br />

@@ -14,7 +14,7 @@ export interface IDayBaseProps {
     showToday?: boolean;
     todayClassName?: string;
     selectedClassName?: string;
-    formartDayValue?: (day: number) => string | React.ReactNode;
+    formatDayValue?: (day: number) => string | React.ReactNode;
 }
 export interface IWeekLabel {
     name?: string;
@@ -52,7 +52,7 @@ export interface IDatePickerProps extends IDayBaseProps, IBaseYear {
     show?: boolean;
     showAnchor?: boolean;
     value?: Date;
-    i18nLabelWeek?: IWeekLabel[];
+    i18nLabelWeek?: IWeekLabel[] | string[];
     i18nLabelMonth?: string[];
     bookmarkDates?: IBookmarkDate[];
     showMonthYearSelection?: boolean;
@@ -61,6 +61,7 @@ export interface IDatePickerProps extends IDayBaseProps, IBaseYear {
     showFooter?: boolean;
     showXClose?: boolean;
     xCloseIcon?: string | React.ReactNode;
+    refsResetCalendar?: React.MutableRefObject<() => any>;
     onSelectedValue?: (value: Date) => any;
     onChangeView?: (mode: TModeView) => any;
     onClickWeekLabel?: (weekLabel: IWeekLabel) => any;
