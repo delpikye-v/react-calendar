@@ -8,7 +8,7 @@
 
 ---
 
-[![NPM](https://img.shields.io/npm/v/react-calendar-z.svg)](https://www.npmjs.com/package/react-calendar-z) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/react-calendar-z.svg)](https://www.npmjs.com/package/react-calendar-z) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com) ![downloads](https://img.shields.io/npm/dt/react-calendar.svg)
 
 
 #### Description
@@ -70,45 +70,37 @@ import Calendar from "react-calendar-z";
 
 see <b>index.d.ts</b>
 
-| props                       | type                                                                | description                                     |
-| --------------------------- | ------------------------------------------------------------------- | ----------------------------------------------- |
-| className                   | string                                                              |                                                 |
-| labelMonthYearClassName     | string                                                              |                                                 |
-| weekClassName               | string                                                              |                                                 |
-| width                       | string / number                                                     |                                                 |
-| height                      | string / number                                                     |                                                 |
-| labelNext                   | string / React.ReactNode                                            |                                                 |
-| labelBack                   | string / React.ReactNode                                            |                                                 |
-| weekStart                   | enum (`sunday` / `monday` / `friday` / `saturday`)                  |  default: `sunday`                              |
-| fitMonthDay                 | boolean                                                             | `false`: display dates of other months          |
-| show                        | boolean                                                             |                                                 |
-| showAnchor                  | boolean                                                             |                                                 |
-| value                       | Date                                                                | value selected `DATE`                           |
-| i18nLabelWeek               | IWeekLabel[] / string[]: from `sunday`, `monday`... -> `saturday`   | auto mapping with `weekStart`                   |
-| i18nLabelMonth              | string[]                                                            |                                                 |
-| bookmarkDates               | IBookmarkDate[]                                                     | add a class to bookmark                         |
-| onSelectedValue             | (value: Date) => any                                                | set selected value `DATE`                       |
-| onChangeView                | (mode: TModeView) => any                                            |                                                 |
-| onClickWeekLabel            | (weekLabel: IWeekLabel) => any                                      |                                                 |
-| formatTittleYearMonth       | (year: number, month: number, decadeData?: number[])                | your format                                     |
-| readOnly                    | boolean                                                             |                                                 |
-| neighborMonthClassName      | string                                                              | the className of the date                       |
-| showToday                   | boolean                                                             |                                                 |
-| todayClassName              | string                                                              |                                                 |
-| selectedClassName           | string                                                              |                                                 |
-| formatDayValue              | (day: number) => string / React.ReactNode                           |                                                 |
-| minYear                     | number                                                              | default: `currentYear` - 100                    |
-| maxYear                     | number                                                              | default: `currentYear` + 100                    |
-| notBeforeTime               | Date                                                                | default: `undefined`                            |
-| notAfterTime                | Date                                                                | default: `undefined`                            |
-| minimumDayCanLargeThanToday | boolean                                                             | false                                           |
-| showMonthYearSelection      | boolean                                                             | false: display selection month year             |
-| showNextBack                | boolean                                                             | false: display next back                        |
-| rightNextBack               | boolean                                                             | display position next back                      |
-| showFooter                  | boolean                                                             | show footer (selection date and clear status)   |
-| showXClose                  | boolean                                                             | button clear status                             |
-| xCloseIcon                  | string / React.ReactNode                                            | customize x-close                               |
-| formatSelectedDate          | (date: Date) => string / React.ReactNode                            | format in footer (default `MMM DD, yyyy`)       |
+| Prop                      | Type                                                  | Description                         |
+|---------------------------|-------------------------------------------------------|-------------------------------------|
+| `className`               | `string`                                              | CSS class for the main container    |
+| `labelMonthYearClassName` | `string`                                              | CSS class for month-year label      |
+| `weekClassName`           | `string`                                              | CSS class for week row              |
+| `width`                   | `string \| number`                                    | Width of the calendar               |
+| `height`                  | `string \| number`                                    | Height of the calendar              |
+| `labelNext`               | `string \| React.ReactNode`                           | Label content for "next" button     |
+| `labelBack`               | `string \| React.ReactNode`                           | Label content for "back" button     |
+| `weekStart`               | `TWeekStart`                                          | Start day of the week               |
+| `showOnlyCurrentMonthDays`| `boolean`                                             | Show only current month days (hide others) |
+| `isVisible`               | `boolean`                                             | Show or hide the calendar           |
+| `showAnchor`              | `boolean`                                             | Show anchor element                 |
+| `value`                   | `Date`                                                | Selected date                       |
+| `i18nLabelWeek`           | `IWeekLabel[] \| string[]`                            | Localized week labels               |
+| `i18nLabelMonth`          | `string[]`                                            | Localized month labels              |
+| `bookmarkDates`           | `IBookmarkDate[]`                                     | Dates to highlight/bookmark         |
+| `showMonthYearSelection`  | `boolean`                                             | Enable month/year selection         |
+| `showNextBack`            | `boolean`                                             | Show next/back navigation buttons   |
+| `rightNextBack`           | `boolean`                                             | Position next/back buttons on right |
+| `maxHeightSelectMonth`    | `number \| string`                                    | Max height for month dropdown       |
+| `maxHeightSelectYear`     | `number \| string`                                    | Max height for year dropdown        |
+| `showFooter`              | `boolean`                                             | Show footer with date and clear     |
+| `showXClose`              | `boolean`                                             | Show close (X) button               |
+| `xCloseIcon`              | `string \| React.ReactNode`                           | Custom close button icon            |
+| `refsResetCalendar`       | `React.MutableRefObject<() => any>`                   | Ref to reset calendar method        |
+| `onSelectedValue`         | `(value: Date) => any`                                | Callback when date selected         |
+| `onChangeView`            | `(mode: TModeView) => any`                            | Callback on view mode change        |
+| `onClickWeekLabel`        | `(weekLabel: IWeekLabel) => any`                      | Callback on week label click        |
+| `formatTittleYearMonth`   | `(year: number, month: number, decadeData?: number[]) => string \| React.ReactNode` | Custom format for title display     |
+| `formatSelectedDate`      | `(date: Date) => string \| React.ReactNode`           | Custom format for selected date     |
 
 <br />
 

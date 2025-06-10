@@ -8,10 +8,5 @@ export interface ICalendarCellProps {
     neighbor?: boolean;
     setSelected: (value: number) => any;
 }
-/**
- * CalendarCell
- *
- * A cell in the calendar, displaying a month or year.
- */
 declare const CalendarCell: React.FC<ICalendarCellProps>;
 export default CalendarCell;

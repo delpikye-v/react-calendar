@@ -31,7 +31,7 @@ export interface IWeekData {
     isToday?: boolean;
     isSelected?: boolean;
     isOverRange?: boolean;
-    fitMonthDay?: boolean;
+    showOnlyCurrentMonthDays?: boolean;
     isBookmark?: boolean;
     bookmarkClassName?: string;
 }
@@ -48,8 +48,8 @@ export interface IDatePickerProps extends IDayBaseProps, IBaseYear {
     labelNext?: string | React.ReactNode;
     labelBack?: string | React.ReactNode;
     weekStart?: TWeekStart;
-    fitMonthDay?: boolean;
-    show?: boolean;
+    showOnlyCurrentMonthDays?: boolean;
+    isVisible?: boolean;
     showAnchor?: boolean;
     value?: Date;
     i18nLabelWeek?: IWeekLabel[] | string[];
@@ -58,6 +58,8 @@ export interface IDatePickerProps extends IDayBaseProps, IBaseYear {
     showMonthYearSelection?: boolean;
     showNextBack?: boolean;
     rightNextBack?: boolean;
+    maxHeightSelectMonth?: number | string;
+    maxHeightSelectYear?: number | string;
     showFooter?: boolean;
     showXClose?: boolean;
     xCloseIcon?: string | React.ReactNode;
@@ -72,7 +74,7 @@ export interface ICalendarNavProps {
     children: any;
     className?: string;
     disabled?: boolean;
-    show?: boolean;
+    isVisible?: boolean;
     index: number;
     handleNextBack: (valueChange: number) => any;
 }

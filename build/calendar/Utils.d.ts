@@ -1,7 +1,6 @@
 import { IBaseYear, IObject, IWeekData } from './IFTypes';
 export declare const isNil: (value: any) => boolean;
 export declare const isToday: (year: number, month: number, date: number) => boolean;
-export declare const animateLabelChange: (refs: Element, duration?: number) => void;
 export declare const getMiMaxYear: (param: IBaseYear) => IObject;
 export declare const getMonthName: (month: number, label?: string[]) => string;
 export declare const padZero: (value: number) => string;
@@ -13,7 +12,7 @@ export declare const getPreNextOfMonth: (year: number, month: number) => IWeekDa
 export declare const parseYearMonthDateToNumber: (year: number, month: number, day: number) => number;
 export declare const parseYearMonthToNumber: (yearMonth: number[]) => number;
 export declare const fmtMonthDay: (month: number, day: number) => string;
-export declare const getDecadesFromYear: (year: number) => number[];
+export declare const getDecadesFromYear: (year: number) => [number, number];
 export declare const labelMonths: string[];
 export declare const keyMonths: string[];
 export declare const labelWeekDays: {

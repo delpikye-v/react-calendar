@@ -1,6 +1,6 @@
 {
   "name": "react-calendar-z",
-  "version": "2.4.3",
+  "version": "4.0.0",
   "description": "React hook calendar (lib). Ultimate calendar",
   "main": "build/index.js",
   "module": "build/index.esm.js",
@@ -28,6 +28,8 @@
     "components",
     "calendar",
     "react-calendar",
+    "react-calendar-z",
+    "react-hook-calendar",
     "basic-calendar",
     "date-picker",
     "simple-calendar",
@@ -77,6 +79,8 @@
   },
   "dependencies": {
     "joinclass": "^1.0.0",
-    "react-ifz": "^1.2.0"
+    "react-dropdown-z": "^6.1.0",
+    "react-if-vz": "^1.0.0",
+    "react-wrap-animate-z": "^1.1.0"
   }
 }
