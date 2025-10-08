@@ -1,5 +1,28 @@
 import React from "react";
-export declare type TModeView = "date" | "month" | "year";
+export type TWeekStart = "monday" | "sunday" | "saturday" | "friday";
+export type TModeView = "date" | "month" | "year";
+export interface IBaseYear {
+    minYear?: number;
+    maxYear?: number;
+    notBeforeTime?: Date;
+    notAfterTime?: Date;
+    minimumDayCanExceedToday?: boolean;
+}
+export interface IDayBaseProps {
+    readOnly?: boolean;
+    neighborMonthClassName?: string;
+    showToday?: boolean;
+    todayClassName?: string;
+    selectedClassName?: string;
+    focusable?: boolean;
+    formatDayValue?: (day: number) => string | React.ReactNode;
+}
+export interface IWeekLabel {
+    name?: string;
+    shortName?: string;
+    key?: number;
+    dateClassName?: string;
+}
 export interface IWeekData {
     year: number;
     month: number;
@@ -9,56 +32,78 @@ export interface IWeekData {
     isToday?: boolean;
     isSelected?: boolean;
     isOverRange?: boolean;
-    fitMonthDay?: boolean;
+    isBookmark?: boolean;
+    bookmarkClassName?: string;
 }
-export interface IWeekLabel {
-    name: string;
-    shortName: string;
-    key?: number;
-}
-export interface IDatePickerProps {
+export interface IBookmarkDate {
+    date: Date;
     className?: string;
-    todayClassName?: string;
-    selectedClassName?: string;
-    neighborMonthClassName?: string;
+}
+export interface IDatePickerProps extends IDayBaseProps, IBaseYear {
+    className?: string;
     labelMonthYearClassName?: string;
     weekClassName?: string;
     width?: string | number;
     height?: string | number;
     labelNext?: string | React.ReactNode;
     labelBack?: string | React.ReactNode;
-    weekStart?: "monday" | "sunday";
-    fitMonthDay?: boolean;
-    notBeforeTime?: Date;
-    notAfterTime?: Date;
-    readOnly?: boolean;
-    show?: boolean;
+    weekStart?: TWeekStart;
+    showOnlyCurrentMonthDays?: boolean;
     showAnchor?: boolean;
     value?: Date;
-    showToday?: boolean;
-    i18nLabelWeek?: IWeekLabel[];
+    i18nLabelWeek?: IWeekLabel[] | string[];
     i18nLabelMonth?: string[];
-    onSelectedValue?: (value: Date) => any;
-    onChangeView?: (mode: TModeView) => any;
-    onClickWeekLabel?: (weekLabel: IWeekLabel) => any;
-    formatTittleYearMonth?: (year: number, month: number, decadeData?: number[]) => string | React.ReactNode;
-    formartDayValue?: (day: number) => string | React.ReactNode;
+    bookmarkDates?: IBookmarkDate[];
+    showMonthYearSelection?: boolean;
+    showNextBack?: boolean;
+    rightNextBack?: boolean;
+    maxHeightSelectMonth?: number | string;
+    maxHeightSelectYear?: number | string;
+    showFooter?: boolean;
+    showXClose?: boolean;
+    xCloseIcon?: string | React.ReactNode;
+    enableKeyboardModeSwitch?: boolean;
+    onKeyModeChange?: (nextMode: TModeView, event: KeyboardEvent) => void;
+    onSelectedValue?: (value: Date) => void;
+    onChangeView?: (mode: TModeView) => void;
+    onClickWeekLabel?: (weekLabel: IWeekLabel) => void;
+    formatTitleYearMonth?: (year: number, month: number, decadeData?: number[]) => string | React.ReactNode;
+    formatSelectedDate?: (date: Date) => string | React.ReactNode;
 }
-export interface IMonthViewProps {
-    labelMonths: string[];
-    selected: number;
-    isSameYear: boolean;
-    setSelected: (value: number) => any;
+export interface ICalendarNavProps {
+    children: React.ReactNode;
+    className?: string;
+    disabled?: boolean;
+    isVisible?: boolean;
+    directionIndex: number;
+    handleNextBack: (valueChange: number) => void;
 }
-export interface IDecadeViewProps {
-    decadeData: number[];
-    selected: number;
-    setSelected: (value: number) => any;
+export interface IObject {
+    [name: string]: any;
 }
-export interface IValueCellProps {
-    value: number;
-    display?: number | string;
-    isSelected?: boolean;
-    neighbor?: boolean;
-    setSelected: (value: number) => any;
+export interface ICalendarRefProps {
+    resetSelectedDate: () => void;
+    setValue: (date: Date) => void;
+    getSelectedDate: () => Date;
+    changeMode: (mode: TModeView) => void;
+    nextMonth: () => void;
+    prevMonth: () => void;
+    nextYear: () => void;
+    prevYear: () => void;
+    nextDecade: () => void;
+    prevDecade: () => void;
+    selectDate: (date: Date) => void;
+    selectMonth: (month: number) => void;
+    selectYear: (year: number) => void;
+    focusToday: () => void;
+}
+export interface GridPosition {
+    row: number;
+    col: number;
+    realRow?: number;
+    realCol?: number;
+}
+export interface GridMoveOptions {
+    maxRow: number;
+    maxCol: number;
 }
