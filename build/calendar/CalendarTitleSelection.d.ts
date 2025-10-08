@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 export interface ICalendarTitleSelectionProps {
     currentDate: Date;
     minYear: number;
@@ -11,8 +11,8 @@ export interface ICalendarTitleSelectionProps {
     maxHeightSelectMonth?: number | string;
     maxHeightSelectYear?: number | string;
     i18nLabelMonth?: string[];
-    minimumDayCanLargeThanToday?: boolean;
-    handleChange: (year: number, month: number) => any;
+    minimumDayCanExceedToday?: boolean;
+    handleChange: (year: number, month: number) => void;
 }
 declare const CalendarTitleSelection: React.FC<ICalendarTitleSelectionProps>;
 export default CalendarTitleSelection;

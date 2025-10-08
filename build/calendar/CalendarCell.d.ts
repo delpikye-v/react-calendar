@@ -1,12 +1,14 @@
-import React from 'react';
+import React from "react";
 export interface ICalendarCellProps {
     value: number;
     className?: string;
     disabled?: boolean;
-    display?: number | string;
+    display?: string | number;
     isSelected?: boolean;
     neighbor?: boolean;
-    setSelected: (value: number) => any;
+    tabIndex?: number;
+    setSelected: (value: number) => void;
+    onKeyDown?: React.KeyboardEventHandler<HTMLSpanElement>;
 }
-declare const CalendarCell: React.FC<ICalendarCellProps>;
+declare const CalendarCell: React.ForwardRefExoticComponent<ICalendarCellProps & React.RefAttributes<HTMLDivElement>>;
 export default CalendarCell;

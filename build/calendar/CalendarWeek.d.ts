@@ -1,10 +1,14 @@
-import React from 'react';
-import { ICalendarDayOfWeeksProps } from './CalendarDayOfWeek';
-import { IWeekLabel } from './IFTypes';
+import React from "react";
+import { type ICalendarDayOfWeeksProps } from "./CalendarDayOfWeek";
+import type { IWeekLabel } from "./types";
 export interface ICalendarWeekProps extends ICalendarDayOfWeeksProps {
+    showOnlyCurrentMonthDays?: boolean;
     weekLabels: IWeekLabel[];
     weekClassName?: string;
-    onClickWeekLabel?: (weekLabel: IWeekLabel) => any;
+    focusable?: boolean;
+    onClickWeekLabel?: (weekLabel: IWeekLabel) => void;
+    onMoveNextMonth?: () => void;
+    onMovePrevMonth?: () => void;
 }
 declare const CalendarWeek: React.FC<ICalendarWeekProps>;
 export default CalendarWeek;
