@@ -1,21 +1,14 @@
-## ✨ react-calendar-z
+## 🗓️ react-calendar-z
+
+[![NPM](https://img.shields.io/npm/v/react-calendar-z.svg)](https://www.npmjs.com/package/react-calendar-z)
+![Downloads](https://img.shields.io/npm/dt/react-calendar-z.svg)
+
+[LIVE DEMO](https://codesandbox.io/p/devbox/react-calendar-forked-y982q5)
 
 **Lightweight, customizable React calendar component** supporting single and range date selection.
 
 - No dependency on momentjs/dayjs — pure JS.
 - Fully configurable week start, month/year selection, bookmarks, and localized labels.
-
----
-
-[![NPM](https://img.shields.io/npm/v/react-calendar-z.svg)](https://www.npmjs.com/package/react-calendar-z)
-[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
-![Downloads](https://img.shields.io/npm/dt/react-calendar-z.svg)
-
----
-
-### 🌟 Demo
-
-👉 [Codesandbox](https://codesandbox.io/s/86omu9)
 
 ---
 
@@ -37,11 +30,7 @@
 
 ```bash
 npm install react-calendar-z
-```
 
-or
-
-```bash
 yarn add react-calendar-z
 ```
 
@@ -51,7 +40,8 @@ yarn add react-calendar-z
 
 ```tsx
 import React, { useState } from "react";
-import "react-calendar-z/build/styles.css";
+import "react-calendar-z/styles.css";
+
 import Calendar from "react-calendar-z";
 
 function App() {
@@ -108,8 +98,6 @@ export default App;
 | `showMonthYearSelection`   | `boolean`                                                                           | Enable month/year selection        |
 | `showNextBack`             | `boolean`                                                                           | Show next/back navigation buttons  |
 | `rightNextBack`            | `boolean`                                                                           | Align navigation buttons to right  |
-| `maxHeightSelectMonth`     | `number \| string`                                                                  | Max height for month dropdown      |
-| `maxHeightSelectYear`      | `number \| string`                                                                  | Max height for year dropdown       |
 | `showFooter`               | `boolean`                                                                           | Show footer with selected date     |
 | `showXClose`               | `boolean`                                                                           | Show close (X) button              |
 | `xCloseIcon`               | `string \| React.ReactNode`                                                         | Custom close icon                  |
@@ -124,38 +112,21 @@ export default App;
 
 ## 📘 Ref API
 
-```bash
+```ts
 export interface ICalendarRef {
-  /** Reset current selected date */
   resetSelectedDate: () => void;
-
-  /** Set calendar to a specific date */
   setValue: (date: Date) => void;
-
-  /** Get the current selected date */
   getSelectedDate: () => Date;
-
-  /** Change current view mode (date, month, year, decade) */
   changeMode: (mode: TModeView) => void;
-
-  /** Navigate to next/previous month */
   nextMonth: () => void;
   prevMonth: () => void;
-
-  /** Navigate to next/previous year */
   nextYear: () => void;
   prevYear: () => void;
-
-  /** Navigate to next/previous decade */
   nextDecade: () => void;
   prevDecade: () => void;
-
-  /** Select a specific date, month, or year programmatically */
   selectDate: (date: Date) => void;
   selectMonth: (month: number) => void;
   selectYear: (year: number) => void;
-
-  /** Focus the current day (today) */
   focusToday: () => void;
 }
 ```
@@ -168,8 +139,6 @@ export interface ICalendarRef {
 ![Month View](https://github.com/delpikye-v/react-calendar/blob/main/month.png)
 ![Year View](https://github.com/delpikye-v/react-calendar/blob/main/year.png)
 ![Selection](https://github.com/delpikye-v/react-calendar/blob/main/selection.png)
-
----
 
 ---
 

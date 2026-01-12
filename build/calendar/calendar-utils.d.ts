@@ -14,7 +14,11 @@ export declare const startWeekDays: {
     friday: number[];
     saturday: number[];
 };
-export declare const buildWeekLabels: (year: number, month: number, selectedFocusDate: Date, notBeforeTime: Date | undefined, notAfterTime: Date | undefined, weekStart: TWeekStart, showOnlyCurrentMonthDays: boolean, setDayOfWeeks: (value: React.SetStateAction<IWeekData[][]>) => void, setTempMonthYear: (value: React.SetStateAction<number[]>) => void, bookmarkDates: IBookmarkDate[], isChange: boolean) => [number, number];
+export declare const buildWeekLabels: (year: number, month: number, selectedFocusDate: Date, notBeforeTime: Date | undefined, notAfterTime: Date | undefined, weekStart: TWeekStart, showOnlyCurrentMonthDays: boolean, bookmarkDates: IBookmarkDate[], isChange: boolean) => {
+    selectedPos: [number, number];
+    dayOfWeeks: IWeekData[][];
+    tempMonthYear: number[];
+};
 export declare const getNavButtonStatus: (isModeYear: boolean, isModeDate: boolean, currentYearMonth: [number, number], currentDecade: [number, number], calendarParams: IObject) => {
     disabledBack: boolean;
     disabledNext: boolean;

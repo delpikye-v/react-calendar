@@ -8,8 +8,6 @@ export interface ICalendarTitleSelectionProps {
     valueMonth: number;
     valueYear: number;
     className?: string;
-    maxHeightSelectMonth?: number | string;
-    maxHeightSelectYear?: number | string;
     i18nLabelMonth?: string[];
     minimumDayCanExceedToday?: boolean;
     handleChange: (year: number, month: number) => void;

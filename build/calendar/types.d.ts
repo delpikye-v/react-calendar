@@ -57,12 +57,11 @@ export interface IDatePickerProps extends IDayBaseProps, IBaseYear {
     showMonthYearSelection?: boolean;
     showNextBack?: boolean;
     rightNextBack?: boolean;
-    maxHeightSelectMonth?: number | string;
-    maxHeightSelectYear?: number | string;
     showFooter?: boolean;
     showXClose?: boolean;
     xCloseIcon?: string | React.ReactNode;
     enableKeyboardModeSwitch?: boolean;
+    changeModeTrigger?: "click" | "doubleClick";
     onKeyModeChange?: (nextMode: TModeView, event: KeyboardEvent) => void;
     onSelectedValue?: (value: Date) => void;
     onChangeView?: (mode: TModeView) => void;
